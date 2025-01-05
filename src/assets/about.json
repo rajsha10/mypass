@@ -1,0 +1,76 @@
+{
+  "about": [
+    {
+      "name": "Sports",
+      "occasion": "Mumbai Warriors Fight Night",
+      "place": "NSCI Dome - Mumbai, Maharashtra",
+      "date": "December 5 2024"
+    },
+    {
+      "name": "Blockchain",
+      "occasion": "ETH Bengaluru",
+      "place": "Bengaluru, Karnataka",
+      "date": "January 15 2025"
+    },
+    {
+      "name": "Hackathon",
+      "occasion": "Privacy Hackathon Delhi",
+      "place": "India Habitat Centre - Delhi",
+      "date": "February 10 2025"
+    },
+    {
+      "name": "Sports",
+      "occasion": "Kolkata Knight Riders Fan Meet",
+      "place": "Eden Gardens - Kolkata, West Bengal",
+      "date": "March 20 2025"
+    },
+    {
+      "name": "Blockchain",
+      "occasion": "ETH Summit Hyderabad",
+      "place": "HITEX Exhibition Center - Hyderabad, Telangana",
+      "date": "April 18 2025"
+    },
+    {
+      "name": "Cultural",
+      "occasion": "Jaipur Cultural Fest",
+      "place": "Albert Hall Museum - Jaipur, Rajasthan",
+      "date": "November 12 2024"
+    },
+    {
+      "name": "Technology",
+      "occasion": "Tech Expo Chennai",
+      "place": "Chennai Trade Centre - Chennai, Tamil Nadu",
+      "date": "December 10 2024"
+    },
+    {
+      "name": "Startup",
+      "occasion": "Mumbai Startup Summit",
+      "place": "Bombay Exhibition Centre - Mumbai, Maharashtra",
+      "date": "December 15 2024"
+    },
+    {
+      "name": "Literary",
+      "occasion": "Lucknow Literary Meet",
+      "place": "Indira Gandhi Pratishthan - Lucknow, Uttar Pradesh",
+      "date": "January 5 2025"
+    },
+    {
+      "name": "Blockchain",
+      "occasion": "Ahmedabad Blockchain Conclave",
+      "place": "GMDC Ground - Ahmedabad, Gujarat",
+      "date": "January 20 2025"
+    },
+    {
+      "name": "Technology",
+      "occasion": "Pune Robotics Workshop",
+      "place": "Balewadi Stadium - Pune, Maharashtra",
+      "date": "February 2 2025"
+    },
+    {
+      "name": "Art",
+      "occasion": "Delhi Art Gala",
+      "place": "India International Centre - Delhi",
+      "date": "February 18 2025"
+    }
+  ]
+}

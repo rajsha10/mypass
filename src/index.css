@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poiret+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-white: #FFFFFF;
+  --clr-black: #000000;
+  --clr-grey: #1a1a1a;
+  --clr-grey-2: #2b2b2b;
+  --clr-red: #e31837;
+  --clr-dark-red: #b31414;
+  --clr-light-grey: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--clr-light-grey);
+}
+
+/* ------------------------------------------------------ */
+/* -- HEADER -- */
+
+header {
+  background: linear-gradient(45deg, var(--clr-black) 0%, var(--clr-red) 100%);
+  min-height: 30vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header__title {
+  color: var(--clr-white);
+  margin: 3rem 0 0 2rem;
+  max-width: 100%;
+  font-family: "Open Sans";
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header_para{
+  position: absolute;
+  color: #fff;
+  margin-left: 12rem;
+}
+
+/* ------------------------------------------------------ */
+/* -- SELECTS -- */
+
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.sort__select {
+  width: 250px;
+  height: 45px;
+  margin: 25px 10px;
+  border: 2px solid var(--clr-grey);
+  border-radius: 8px;
+  background-color: var(--clr-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort__select p {
+  margin-left: 15px;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--clr-grey);
+}
+
+.sort__select img {
+  width: 15px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.sort__select:hover {
+  border-color: var(--clr-red);
+  box-shadow: 0 2px 8px rgba(227, 24, 55, 0.2);
+}
+
+/* ------------------------------------------------------ */
+/* -- CARDS -- */
+
+.cards {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+}
+
+/* -- CARDS -- */
+.card {
+  width: 300px;
+  height: 480px;
+  margin: 25px;
+  background-color: var(--clr-white);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card__thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 20px;
+  text-align: left;
+  transition: 0.3s ease all;
+}
+
+.card__info:hover {
+  background: rgba(227, 24, 55, 0.05);
+  border-radius: 0 0 12px 12px;
+}
+
+.card__info p small {
+  font-size: 0.9rem;
+  color: var(--clr-grey);
+}
+
+.card__date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-grey);
+}
+
+.card__name {
+  font-family: "Open Sans";
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-black);
+  margin: 10px 0;
+}
+
+.card__location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-grey);
+}
+
+.card__cost {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--clr-grey);
+}
+
+.card__cost strong {
+  font-family: "Open Sans";
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--clr-red);
+}
+
+.card__button,
+.card__button--out {
+  width: 135px;
+  height: 45px;
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  border: none;
+  border-radius: 25px;
+  font-family: "Open Sans";
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.card__button:hover {
+  background-color: var(--clr-dark-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card__button--out {
+  background-color: var(--clr-grey);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------ */
+/* -- SEAT CHART -- */
+
+.occasion {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(5px);
+}
+
+.occasion__seating {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(25, 1fr);
+  background: linear-gradient(to bottom, var(--clr-red), var(--clr-black) 75%);
+  border: 10px solid var(--clr-grey);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  height: 85%;
+  margin: 0 auto;
+  padding: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow-x: scroll;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.occasion__seating h1 {
+  grid-column: 1 / span 27;
+  grid-row: 1;
+  color: var(--clr-white);
+  font-weight: 300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.occasion__close {
+  grid-column: 27 / span 1;
+  grid-row: 1;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--clr-white);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.occasion__close:hover {
+  background: var(--clr-white);
+  transform: rotate(90deg);
+}
+
+.occasion__close img {
+  width: 25px;
+  height: 25px;
+}
+
+.occasion__stage,
+.occasion__spacer--1,
+.occasion__spacer--2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+}
+
+.occasion__stage {
+  grid-column: 1 / span 27;
+  grid-row: 2;
+  height: 150px;
+  border: 3px solid var(--clr-red);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 15px rgba(227, 24, 55, 0.3);
+}
+
+.occasion__spacer--1,
+.occasion__spacer--2 {
+  min-width: 30px;
+  margin: 0 5px;
+  border: 1px solid var(--clr-red);
+  writing-mode: vertical-lr;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.occasion__spacer--1 {
+  grid-column: 6 / span 1;
+  grid-row: 3 / span 10;
+}
+
+.occasion__spacer--2 {
+  grid-column: 22 / span 1;
+  grid-row: 3 / span 10;
+}
+
+.occasion__seats,
+.occasion__seats--taken {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--clr-white);
+  border-radius: 50%;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.occasion__seats:hover {
+  background: var(--clr-white);
+  color: var(--clr-red);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(227, 24, 55, 0.4);
+}
+
+.occasion__seats--taken {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------ */
+/* -- MEDIA QUERIES -- */
+
+@media screen and (max-width: 1200px) {
+  nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav__brand {
+    grid-column: 1;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .nav__connect {
+    margin: 0 30px 0 auto;
+  }
+
+  .header__title {
+    width: 100%;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav__search {
+    display: none;
+  }
+
+  .nav__brand {
+    padding: 30px 30px;
+  }
+
+  .nav__brand h1 {
+    font-size: 1.5em;
+  }
+
+  .nav__connect {
+    width: 150px;
+    margin: 0 30px 0 auto;
+    font-size: 1em;
+  }
+
+  .sort {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .sort__select {
+    width: 90%;
+    max-width: 300px;
+    margin: 10px 0;
+  }
+
+  .occasion__seating {
+    padding: 15px;
+    gap: 5px;
+  }
+
+  .occasion__seats,
+  .occasion__seats--taken {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav__brand {
+    padding: 20px;
+  }
+
+  .nav__connect {
+    width: 120px;
+    height: 40px;
+    margin: 0 20px 0 auto;
+    font-size: 0.9em;
+  }
+
+  .card {
+    height: 120px;
+  }
+
+  .card__info {
+    padding: 10px;
+  }
+
+  .card__name {
+    grid-column: 3 / span 7;
+    font-size: 0.9em;
+    text-align: left;
+  }
+
+  .card__location {
+    grid-column: 3 / span 7;
+    font-size: 0.85em;
+    text-align: left;
+  }
+
+  .card__cost {
+    grid-column: 10 / span 3;
+    grid-row: 1 / span 2;
+    place-self: flex-start;
+    justify-self: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+
+  .card__button,
+  .card__button--out {
+    grid-column: 10 / span 3;
+    grid-row: 2 / span 2;
+    place-self: center;
+    width: 110px;
+    height: 35px;
+    font-size: 0.9em;
+  }
+
+  .occasion__stage {
+    height: 100px;
+  }
+
+  .occasion__seating h1 {
+    font-size: 1.2em;
+  }
+
+  .occasion__close {
+    width: 30px;
+    height: 30px;
+  }
+
+  .occasion__close img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Add smooth scrolling for better mobile experience */
+  .occasion__seating {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-red) var(--clr-black);
+  }
+
+  /* Custom scrollbar styling */
+  .occasion__seating::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .occasion__seating::-webkit-scrollbar-track {
+    background: var(--clr-black);
+    border-radius: 4px;
+  }
+
+  .occasion__seating::-webkit-scrollbar-thumb {
+    background: var(--clr-red);
+    border-radius: 4px;
+  }
+
+  .occasion__seating::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-dark-red);
+  }
+}
+
+/* Add custom animation for button press */
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card__button:active,
+.nav__connect:active {
+  animation: buttonPress 0.2s ease;
+}
+
+/* Add smooth transition for all interactive elements */
+a, button, input, select {
+  transition: all 0.3s ease;
+}
+
+/* Add focus styles for better accessibility */
+*:focus {
+  outline: 2px solid var(--clr-red);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users, keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Add text selection color */
+::selection {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+}
