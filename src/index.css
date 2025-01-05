@@ -14,6 +14,11 @@
   --clr-red: #e31837;
   --clr-dark-red: #b31414;
   --clr-light-grey: #f5f5f5;
+  --clr-primary: #4ecdc4;
+  --clr-secondary: #ff6b6b;
+  --clr-white: #ffffff;
+  --clr-black: #2d3436;
+  --clr-grey: #f0f0f0;
 }
 
 body {
@@ -28,26 +33,29 @@ body {
 /* -- HEADER -- */
 
 header {
-  background: linear-gradient(45deg, var(--clr-black) 0%, var(--clr-red) 100%);
-  min-height: 30vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(to right, #4ecdc4, #ff6b6b);
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .header__title {
-  color: var(--clr-white);
-  margin: 3rem 0 0 2rem;
-  max-width: 100%;
-  font-family: "Open Sans";
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 300;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2.5rem;
+  margin: 20px 0 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.header_para{
-  position: absolute;
-  color: #fff;
-  margin-left: 12rem;
+.header__title strong {
+  color: #2d3436;
+  font-weight: 800;
+}
+
+.header_para {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
 }
 
 /* ------------------------------------------------------ */
@@ -55,157 +63,64 @@ header {
 
 .sort {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sort__select {
-  width: 250px;
-  height: 45px;
-  margin: 25px 10px;
-  border: 2px solid var(--clr-grey);
-  border-radius: 8px;
-  background-color: var(--clr-white);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  flex: 1;
+  position: relative;
 }
 
 .sort__select p {
-  margin-left: 15px;
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  color: var(--clr-grey);
+  color: #2d3436;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.sort__select select {
+  width: 100%;
+  padding: 12px 35px 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  color: #2d3436;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.sort__select select:hover {
+  border-color: #4ecdc4;
+}
+
+.sort__select select:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
 }
 
 .sort__select img {
-  width: 15px;
-  height: auto;
-  margin-right: 15px;
-}
-
-.sort__select:hover {
-  border-color: var(--clr-red);
-  box-shadow: 0 2px 8px rgba(227, 24, 55, 0.2);
+  position: absolute;
+  right: 12px;
+  bottom: 15px;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 /* ------------------------------------------------------ */
-/* -- CARDS -- */
 
+/* cards */
 .cards {
   padding: 0 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
-}
-
-/* -- CARDS -- */
-.card {
-  width: 300px;
-  height: 480px;
-  margin: 25px;
-  background-color: var(--clr-white);
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.card__thumbnail {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px 12px 0 0;
-}
-
-.card__info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  height: 100%;
-  padding: 20px;
-  text-align: left;
-  transition: 0.3s ease all;
-}
-
-.card__info:hover {
-  background: rgba(227, 24, 55, 0.05);
-  border-radius: 0 0 12px 12px;
-}
-
-.card__info p small {
-  font-size: 0.9rem;
-  color: var(--clr-grey);
-}
-
-.card__date {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--clr-grey);
-}
-
-.card__name {
-  font-family: "Open Sans";
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--clr-black);
-  margin: 10px 0;
-}
-
-.card__location {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--clr-grey);
-}
-
-.card__cost {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--clr-grey);
-}
-
-.card__cost strong {
-  font-family: "Open Sans";
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--clr-red);
-}
-
-.card__button,
-.card__button--out {
-  width: 135px;
-  height: 45px;
-  background-color: var(--clr-red);
-  color: var(--clr-white);
-  border: none;
-  border-radius: 25px;
-  font-family: "Open Sans";
-  font-size: 1em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
-
-.card__button:hover {
-  background-color: var(--clr-dark-red);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card__button--out {
-  background-color: var(--clr-grey);
-  opacity: 0.8;
-  cursor: not-allowed;
 }
 
 /* ------------------------------------------------------ */
@@ -214,7 +129,7 @@ header {
 .occasion {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(45, 52, 54, 0.85);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -225,22 +140,23 @@ header {
 .occasion__seating {
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(25, 1fr);
-  background: linear-gradient(to bottom, var(--clr-red), var(--clr-black) 75%);
+  grid-template-columns: repeat(25, 2fr);
+  background: linear-gradient(to bottom, var(--clr-secondary), var(--clr-primary) 75%);
   border: 10px solid var(--clr-grey);
   border-radius: 16px;
   width: 90%;
   max-width: 1200px;
   height: 85%;
   margin: 0 auto;
-  padding: 25px;
+  padding: 5px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  overflow-y: scroll;
   overflow-x: scroll;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 30px rgba(78, 205, 196, 0.3);
 }
 
 .occasion__seating h1 {
@@ -248,7 +164,7 @@ header {
   grid-row: 1;
   color: var(--clr-white);
   font-weight: 300;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .occasion__close {
@@ -273,9 +189,13 @@ header {
   height: 25px;
 }
 
-.occasion__stage,
-.occasion__spacer--1,
-.occasion__spacer--2 {
+.occasion__stage {
+  grid-column: 1 / span 27;
+  grid-row: 2;
+  height: 150px;
+  border: 3px solid var(--clr-secondary);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,32 +203,29 @@ header {
   color: var(--clr-white);
 }
 
-.occasion__stage {
-  grid-column: 1 / span 27;
-  grid-row: 2;
-  height: 150px;
-  border: 3px solid var(--clr-red);
-  border-radius: 0 0 30px 30px;
-  box-shadow: 0 4px 15px rgba(227, 24, 55, 0.3);
-}
-
 .occasion__spacer--1,
 .occasion__spacer--2 {
-  min-width: 30px;
-  margin: 0 5px;
-  border: 1px solid var(--clr-red);
-  writing-mode: vertical-lr;
-  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 20px;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  border: 1px solid var(--clr-secondary);
+  writing-mode: horizontal-tb;
+  background-color: rgba(45, 52, 54, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-white);
 }
 
 .occasion__spacer--1 {
-  grid-column: 6 / span 1;
-  grid-row: 3 / span 10;
+  grid-column: 1 / span 27;
+  grid-row: 7;
 }
 
 .occasion__spacer--2 {
-  grid-column: 22 / span 1;
-  grid-row: 3 / span 10;
+  grid-column: 1 / span 27;
+  grid-row: 12;
 }
 
 .occasion__seats,
@@ -316,7 +233,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--clr-red);
+  background-color: var(--clr-secondary);
   color: var(--clr-white);
   width: 40px;
   height: 40px;
@@ -331,13 +248,13 @@ header {
 
 .occasion__seats:hover {
   background: var(--clr-white);
-  color: var(--clr-red);
+  color: var(--clr-secondary);
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(227, 24, 55, 0.4);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.4);
 }
 
 .occasion__seats--taken {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(45, 52, 54, 0.5);
   border-color: rgba(255, 255, 255, 0.3);
   cursor: not-allowed;
   box-shadow: none;
@@ -371,6 +288,7 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+
   .nav__search {
     display: none;
   }
@@ -391,7 +309,7 @@ header {
 
   .sort {
     flex-direction: column;
-    padding: 10px 0;
+    gap: 15px;
   }
 
   .sort__select {
